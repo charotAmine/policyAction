@@ -33,7 +33,12 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@v2 
-
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: "[SID]"
+        replace: ${{ matrix.subscriptionIds }}
+        include: "policy.json"
     - name: Create or Update Azure Policies
       uses: azure/manage-azure-policy@v0
       with:      
