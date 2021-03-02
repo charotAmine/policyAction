@@ -1,0 +1,37 @@
+
+{
+    "properties": {
+        "displayName": "policy of storage",
+        "description": "This policy is for storage",
+        "mode": "Indexed",
+        "metadata": {
+            "version": "1.0.0",
+            "category": "security"
+        },
+        "parameters": {
+        },
+        "policyRule": {
+            "if": {
+                "allOf": [{
+                        "field": "type",
+                        "equals": "Microsoft.Storage/storageAccounts"
+                    },
+                    {
+                        "field": "kind",
+                        "equals": "BlobStorage"
+                    },
+                    {
+                        "field": "Microsoft.Storage/storageAccounts/accessTier",
+                        "equals": "cool"
+                    }
+                ]
+            },
+            "then": {
+                "effect": "deny"
+            }
+        }
+    },
+     "id": "/subscriptions/68a49bc4-1f2b-4af5-9c53-da081debe239/providers/Microsoft.Authorization/policyDefinitions/stend",
+     "type": "Microsoft.Authorization/policyDefinitions",
+     "name": "stend"
+}
