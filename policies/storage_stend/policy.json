@@ -31,7 +31,7 @@
             }
         }
     },
-     "id": "/subscriptions/[SID]/providers/Microsoft.Authorization/policyDefinitions/stend",
+     "id": "/subscriptions/{{SID}}/providers/Microsoft.Authorization/policyDefinitions/stend",
      "type": "Microsoft.Authorization/policyDefinitions",
      "name": "stend"
 }
