@@ -36,7 +36,7 @@ jobs:
     - name: Find and Replace
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "[SID]"
+        find: "{{SID}}"
         replace: ${{ matrix.subscriptionIds }}
         include: "policy.json"
     - name: Create or Update Azure Policies
