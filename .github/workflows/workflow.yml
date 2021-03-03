@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     strategy:
       matrix:
-        subscriptionIds: ["68a49bc4-1f2b-4af5-9c53-da081debe239", "fa971420-4388-457a-ac56-1cd453785f14"]
+        subscriptionIds: ${{secrets.subscriptionsId}}
     steps:
     - name: Login to Azure
       uses: azure/login@v1
