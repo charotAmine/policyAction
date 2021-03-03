@@ -23,7 +23,6 @@ jobs:
     steps:
     - id: set-matrix
       run: |
-        JSON=$(cat ./your.json)
         echo "::set-output name=matrix::${{secrets.subscriptionsId}}"
 
   build:
