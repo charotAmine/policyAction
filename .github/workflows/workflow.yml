@@ -32,7 +32,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     strategy:
       matrix:
-        subscriptionIds: ${{needs.setMatrix.outputs.matrix}}
+        subscriptionIds: ${{fromJson(needs.setMatrix.outputs.matrix)}}
     steps:
     - name: Login to Azure
       uses: azure/login@v1
