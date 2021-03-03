@@ -12,27 +12,13 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-
-  setMatrix:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-    - id: set-matrix
-      run: |
-        echo "::set-output name=matrix::${{secrets.subscriptionsId}}"
-
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     strategy:
       matrix:
-        subscriptionIds: ${{fromJson(needs.setMatrix.outputs.matrix)}}
+        subscriptionIds: ["68a49bc4-1f2b-4af5-9c53-da081debe239", "fa971420-4388-457a-ac56-1cd453785f14"]
     steps:
     - name: Login to Azure
       uses: azure/login@v1
